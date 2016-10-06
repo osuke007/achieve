@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <p><%= notice %></p>
+
+<h1>お問い合わせ一覧</h1>
+
+<% @contacts.each do |contact| %>
+  <p>名前:<%= contact.name %></p>
+  <p>メール:<%= contact.email %></p>
+  <p>本文:<%= contact.content %></p>
+  <%= link_to '削除する', contact_path(contact.id), method: :delete %>
+  <Hr Align="left" Width="300">
+<% end %>
+
+<%= link_to "問い合わせる", new_contact_path %>
+
