@@ -2,7 +2,8 @@ class BlogsController < ApplicationController
   before_action :authenticate_user!
     
   def index
-      @blogs = Blog.all
+      #@blogs = Blog.all
+      @blogs=Blog.order("updated_at desc")
   end
 
   def new
