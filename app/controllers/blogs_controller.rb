@@ -5,6 +5,7 @@ class BlogsController < ApplicationController
       #@blogs = Blog.all
       @blogs=Blog.order("updated_at desc")
       #binding.pry
+      #raise
   end
 
   def new
