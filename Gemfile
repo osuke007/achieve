@@ -52,3 +52,4 @@ end
 
 gem 'rails_admin'
 gem 'cancan'
+gem 'activeresource' #
