@@ -25,7 +25,6 @@ class User < ActiveRecord::Base
 
   def self.find_for_twitter_oauth(auth, signed_in_resource = nil)
     user = User.find_by(provider: auth.provider, uid: auth.uid)
-
     unless user
       user = User.new(
           name:     auth.info.nickname,
@@ -39,5 +38,9 @@ class User < ActiveRecord::Base
       user.save
     end
     user
+  end
+
+  def self.create_unique_string
+    SecureRandom.uuid
   end
 end
