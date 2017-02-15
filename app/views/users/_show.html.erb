@@ -1,26 +1,32 @@
 <h2>ユーザ詳細</h2>
-<div class="row">
-  <%= profile_img(user) %>
-</div>
-<hr>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">フォロワー一覧</div>
-      <div class="panel-body">
-        <% user.followers.each do |follower|%>
-          <%= follower.name %><br>
-        <% end %>
+<div class="container">
+  <div class="row">
+    <%= profile_img(user) %>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">フォロワー一覧</div>
+        <div class="panel-body">
+          <% user.followers.each do |follower|%>
+            <%= follower.name %><br>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">フォロー一覧</div>
-      <div class="panel-body">
-        <% user.followed_users.each do |followed_user|%>
-          <%= followed_user.name %><br>
-        <% end %>
+
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">フォロー一覧</div>
+        <div class="panel-body">
+          <% user.followed_users.each do |followed_user|%>
+            <%= followed_user.name %><br>
+          <% end %>
+        </div>
+      </div>
     </div>
+
+
   </div>
 </div>
