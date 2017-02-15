@@ -8,8 +8,8 @@
   <div class="row">
     <% @users.each do |user| %>
           <% unless current_user.id == user.id %>
-            <div class="col-md-2 col-xs-6">
-              <%= link_to profile_img(user), user_path(user.id), class: "thumb_s" %><br>
+            <div class="col-md-2 col-sm-6　col-xs-12">
+              <%= link_to profile_img(user), user_path(user.id) %><br>
               <%= user.name %><br>
               <%= render 'follow_form', user: user %><br><br>
             </div>
