@@ -7,7 +7,7 @@
       <div class="panel-heading">フォロワー一覧</div>
       <div class="panel-body">
         <% user.followers.each do |follower|%>
-          <%= follower.name %>
+          <%= follower.name %><br>
         <% end %>
       </div>
     </div>
@@ -17,7 +17,7 @@
       <div class="panel-heading">フォロー一覧</div>
       <div class="panel-body">
         <% user.followed_users.each do |followed_user|%>
-          <%= followed_user.name %>
+          <%= followed_user.name %><br>
         <% end %>
     </div>
   </div>

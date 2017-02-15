@@ -2,9 +2,14 @@
   <h2>ユーザー</h2>
   <% @users.each do |user| %>
       <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
-        <%= link_to profile_img(user), user_path(user.id) %>
-        <%= user.email %>
-        <%= render 'follow_form', user: user %>
+        <% if current_user.id == user.id %>
+          <%= link_to profile_img(user), user_path(user.id) %>
+          <%= user.email %>
+        <% else %>
+          <%= link_to profile_img(user), user_path(user.id) %>
+          <%= user.email %>
+          <%= render 'follow_form', user: user %>
+        <% end %>
       </div>
 
   <% end %>
