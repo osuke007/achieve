@@ -11,7 +11,8 @@
             <div class="col-md-2 col-sm-6 col-xs-12">
               <%= link_to profile_img(user), user_path(user.id) %><br>
               <%= user.name %><br>
-              <%= render 'follow_form', user: user %><br><br>
+              <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%><br>
+              <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %><br><br>
             </div>
           <% end %>
     <% end %>

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'top#index'
-
   get 'relationships/create'
   get 'relationships/destroy'
 
@@ -9,6 +8,10 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+
+  resources :conversations do
+    resources :messages
+  end
 
   resources :blogs, only: [:index, :new, :create, :edit, :update, :destroy] do
     collection do
