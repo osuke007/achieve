@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'notifications/index'
+
   root 'top#index'
   get 'relationships/create'
   get 'relationships/destroy'

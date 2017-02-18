@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
     # ログインユーザーに紐付けてインスタンス生成するためbuildメソッドを使用します。
     @comment = current_user.comments.build(comment_params)
     @blog = @comment.blog
+    @notification = @comment.notifications.build(user_id: @blog.user.id )
 
     # respond_toは、クライアントからの要求に応じてレスポンスのフォーマットを変更します。
     respond_to do |format|
@@ -17,6 +18,9 @@ class CommentsController < ApplicationController
             message: 'あなたの作成したブログにコメントが付きました'
           })
         end
+        Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'notification_created', {
+          unread_counts: Notification.where(user_id: @comment.blog.user.id, read: false).count
+        })
        else
          format.html { render :new }
          format.json { render json: @comment.errors, status: :unprocessable_entity }

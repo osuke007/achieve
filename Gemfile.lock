@@ -91,6 +91,10 @@ GEM
     haml (4.0.7)
       tilt
     hashie (3.4.6)
+    hirb (0.7.3)
+    hirb-unicode (0.0.5)
+      hirb (~> 0.5)
+      unicode-display_width (~> 0.1.1)
     httpclient (2.8.3)
     i18n (0.7.0)
     jbuilder (2.6.1)
@@ -267,6 +271,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
+    unicode-display_width (0.1.1)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (2.3.0)
@@ -288,6 +293,8 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker
+  hirb
+  hirb-unicode
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
