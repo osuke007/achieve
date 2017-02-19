@@ -64,3 +64,5 @@ gem 'pusher'
 #動かないかも。
 gem 'hirb'
 gem 'hirb-unicode' # => HirbのUnicode対応版。日本語が入っていても結果がずれないようになります。
+
+gem 'fog'
